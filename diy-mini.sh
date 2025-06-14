@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# 修改x86架构的内核版本（例如改为5.15/6.1）
+sed -i 's/KERNEL_PATCHVER:=.*/KERNEL_PATCHVER:=6.1/g' target/linux/x86/Makefile
+
 # 修改默认IP
 sed -i 's/192.168.1.1/192.168.5.1/g' package/base-files/files/bin/config_generate
 
